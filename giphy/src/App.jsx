@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import Form from "./Form/Form";
-
+import GifImg from './gifImg/gifImg';
 
 function App() {
   const [giphy, setGiphy] = useState("");
 
   useEffect(()=> {
     console.log("use Effect Working")
-    const gifUrl = `https://api.giphy.com/v1/gifs/random?api_key=G9fK5jNPNHQnqP6L6FBPfv3FmEaeSAJV&tag=&rating=r`;
+    const gifUrl = `https://api.giphy.com/v1/gifs/random?api_key=G9fK5jNPNHQnqP6L6FBPfv3FmEaeSAJV`;
 
     async function makeApiCall(){
       try{
@@ -34,7 +34,7 @@ function App() {
     <div className="App">
       <h1>Gif fun!</h1>
       <Form liftGiphy />
-      <gifImg gifData={giphy}/>
+      <GifImg gifData={giphy}/>
     </div>
   )
 }

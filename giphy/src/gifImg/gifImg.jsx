@@ -1,12 +1,13 @@
 import React from "react";
 
-function gifImg({gifData}){
+export default function GifImg({gifData}){
+    console.log(gifData)
+    
     return (
         
         <div className="imgData">
-        <img src= {gifData.url} alt="" ></img>
+            <img src={gifData.url} alt="" ></img>
         
         </div>
     )
 }
-export default gifImg
