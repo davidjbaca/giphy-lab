@@ -4,22 +4,24 @@ export default function Form({liftGiphy}) {
     const [gif, setGif ] = useState("");
   
     function handleChange(e){
-      setGif(e.target.value)
+      setGif(e.target.value);
     }
   
     function handleSubmit(e){
-      e.preventDefault() // stops our form from making an api call, we want to use our fetch, no page reloads
-      liftGiphy(title)
+      e.preventDefault();
+      liftGiphy(gif);
     }
 
 return (
-    <form>
+    <form onSubmit={handleSubmit}>
         <label> The Gif </label>
-        <input type="text" name='title' placeholder="Get your Gif"
+        <input type="text" 
+        name='title' 
+        placeholder="Search Library"
         onChange={handleChange}
         value={gif}
         />
-        
+
         <button type="Submit">New Random Gif!</button>
 
 
